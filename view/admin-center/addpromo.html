@@ -59,8 +59,6 @@
 								loading="lazy" />
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">My profile</a></li>
-							<li><a class="dropdown-item" href="#">Settings</a></li>
 							<li><a class="dropdown-item" id="logout" href="#">Logout</a></li>
 						</ul>
 					</li>
@@ -100,67 +98,67 @@
 								<div class="modal-body">
 									<div class="mb-3">
 										<label class="mb-2 text-muted" for="name">Duree</label>
-										<<div class="mb-3">
-											<select name="selectcentre" class="form-select"
+										<div class="mb-3">
+											<select name="duree" class="form-select"
 												aria-label="Default select example">
 												<option value="7">7</option>
 												<option value="15">15</option>
 												<option value="27">27</option>
-												<option value="4">4</option>
 											</select>
 
+										</div>
+									</div>
+									<div class="mb-3">
+										<label class="mb-2 text-muted" for="prenom">Pourcentage</label>
+										<input id="pourcentage" type="text" class="form-control" name="pourcentage"
+											value="" required autofocus>
+										<div class="invalid-feedback">
+											Pourcentage is required
+										</div>
+									</div>
+
+									<div class="mb-3">
+										<label class="mb-2 text-muted" for="name">Produit</label>
+										<div class="mb-3">
+											<select id="produitid" name="produitid" class="form-select"
+												aria-label="Default select example">
+											</select>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-bs-dismiss="modal">Close</button>
+										<button type="submit" class="btn btn-primary">Add</button>
 									</div>
 								</div>
-								<div class="mb-3">
-									<label class="mb-2 text-muted" for="prenom">Pourcentage</label>
-									<input id="pourcentage" type="text" class="form-control" name="pourcentage" value=""
-										required autofocus>
-									<div class="invalid-feedback">
-										Pourcentage is required
-									</div>
-								</div>
-
-								<div class="mb-3">
-									<label class="mb-2 text-muted" for="name">Produit</label>
-									<<div class="mb-3">
-										<select name="produitid" class="form-select"
-											aria-label="Default select example">
-
-										</select>
-								</div>
+							</form>
 						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary">Add</button>
-						</div>
-						</form>
 					</div>
 				</div>
+				<!-- END MODAL USER -->
+
+				<div class="table-responsive">
+					<table id="mytable" class="table table-bordred table-striped">
+						<thead>
+							<th>Produit</th>
+							<th>Prix</th>
+							<th>Porcentage</th>
+							<th>Point Fidelite</th>
+							<th>Status</th>
+							<th>Action</th>
+						</thead>
+						<tbody id="tablebody">
+
+						</tbody>
+
+					</table>
+
+					<div class="clearfix"></div>
+
+				</div>
+
 			</div>
-			<!-- END MODAL USER -->
-
-			<div class="table-responsive">
-				<table id="mytable" class="table table-bordred table-striped">
-					<thead>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
-						<th>Center</th>
-						<th>Status</th>
-						<th>Action</th>
-					</thead>
-					<tbody id="tablebody">
-
-					</tbody>
-
-				</table>
-
-				<div class="clearfix"></div>
-
-			</div>
-
 		</div>
-	</div>
 	</div>
 	</div>
 
@@ -169,8 +167,7 @@
 	</script>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-	<script type="module" src="../../assets/js/AG/addcentreadmin.js"></script>
+	<script type="module" src="../../assets/js/AC/addPromo.js"></script>
 
 </body>
 

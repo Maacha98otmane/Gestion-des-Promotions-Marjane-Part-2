@@ -18,15 +18,15 @@ $(document).ready(function () {
             var invalide = [];
 
             for (var i in dt) {
-                if (dt[i].status == null) {
+                if (dt[i].status == "pas encore") {
                     Null.push("Null " + dt[i].status);
 
                 }
-                if (dt[i].status == 1) {
+                if (dt[i].status == "valide") {
                     Valide.push(dt[i].status);
 
                 }
-                if (dt[i].status == 0) {
+                if (dt[i].status == "invalide") {
                     invalide.push(dt[i].status);
                 }
             }

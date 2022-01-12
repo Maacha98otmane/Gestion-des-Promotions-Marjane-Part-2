@@ -36,17 +36,18 @@
 				<!-- Left links -->
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active d-flex flex-column text-center" aria-current="page"
-							href="./home-AC.html"><i class="fas fa-home fa-lg"></i><span class="small">Home</span></a>
+						<a class="nav-link active d-flex flex-column text-center" aria-current="page" href="#"><i
+								class="fas fa-home fa-lg"></i><span class="small">Home</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link d-flex flex-column text-center" aria-current="page" href="./addpromo.html"><i
-								class="fas fa-user-friends fa-lg"></i><span class="small">Promo</span></a>
+						<a class="nav-link d-flex flex-column text-center" aria-current="page"
+							href="./addcenter.html"><i class="fas fa-user-friends fa-lg"></i><span
+								class="small">Centre</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link d-flex flex-column text-center" aria-current="page" href="./addrayon.html"><i
-								class="fas fa-briefcase fa-lg"></i><span class="small">Respo
-								Rayon</span></a>
+						<a class="nav-link d-flex flex-column text-center" aria-current="page"
+							href="./addadmincenter.html"><i class="fas fa-briefcase fa-lg"></i><span class="small">Admin
+								Centre</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link d-flex flex-column text-center" aria-current="page" href="#"><i
@@ -75,12 +76,12 @@
 			<div class="col-md-12">
 				<div class="row justify-content-between">
 					<div class="col-6">
-						<h4>List Responsable Rayon</h4>
+						<h4>List Center</h4>
 					</div>
 					<div class="col-2">
 						<button type="button" class="btn btn-primary" data-bs-toggle="modal"
 							data-bs-target="#exampleModal">
-							Add New User
+							Add New Center
 						</button>
 					</div>
 				</div>
@@ -104,48 +105,6 @@
 											Name is required
 										</div>
 									</div>
-									<div class="mb-3">
-										<label class="mb-2 text-muted" for="prenom">prenom</label>
-										<input id="prenom" type="text" class="form-control" name="prenom" value=""
-											required autofocus>
-										<div class="invalid-feedback">
-											Name is required
-										</div>
-									</div>
-
-									<div class="mb-3">
-										<label class="mb-2 text-muted" for="email">E-Mail Address</label>
-										<input id="email" type="email" class="form-control" name="email" value=""
-											required>
-										<div class="invalid-feedback">
-											Email is invalid
-										</div>
-									</div>
-
-									<div class="mb-3">
-										<label class="mb-2 text-muted" for="password">Password</label>
-										<input id="password" type="password" class="form-control" name="password"
-											required>
-										<div class="invalid-feedback">
-											Password is required
-										</div>
-									</div>
-									<div class="mb-3">
-										<label class="mb-2 text-muted" for="passwordconfirm">Repeat Password</label>
-										<input id="passwordconfirm" type="password" class="form-control"
-											name="passwordconfirm" required>
-										<div class="invalid-feedback">
-											Password is required
-										</div>
-									</div>
-									<div class="mb-3">
-										<label class="mb-2 text-muted" for="passwordconfirm">Category</label>
-										<select name="category" class="form-select" aria-label="Default select example">
-											<option value="electronique">Electronique</option>
-											<option value="sante">sante</option>
-										</select>
-
-									</div>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary"
@@ -161,10 +120,7 @@
 				<div class="table-responsive">
 					<table id="mytable" class="table table-bordred table-striped">
 						<thead>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Email</th>
-							<th>Category</th>
+							<th>Name</th>
 							<th>Action</th>
 						</thead>
 						<tbody id="tablebody">
@@ -188,9 +144,8 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-	<script type="module" src="../../assets/js/AC/addrespo.js"></script>
+	<script type="module" src="../../assets/js/AG/addcentre.js"></script>
 
 </body>
 
 </html>
-

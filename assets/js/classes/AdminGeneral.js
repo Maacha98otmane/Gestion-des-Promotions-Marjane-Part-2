@@ -32,6 +32,19 @@ export default class AdminG {
         }
 
     }
+    static addcenter = async (name) => {
+        try {
+            let creationFields = {
+                name: name
+            }
+            let creationRes = await axios.post("http://localhost:3030/auth/generaladmin/creationcentre", creationFields);
+            let creationDetails = await creationRes.data;
+            return creationDetails;
+        } catch (e) {
+            console.error(e);
+        }
+
+    }
     static deeluser = async (id) => {
         try {
             let creationRes = await axios.post("http://localhost:3030/auth/generaladmin/delete/" + id);

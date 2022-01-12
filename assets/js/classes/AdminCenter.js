@@ -22,9 +22,24 @@ export default class AdminC {
                 email: email,
                 password: password,
                 passwordconfirm: passwordconfirm,
-                categoryid: categoryid
+                category: categoryid
             }
-            let creationRes = await axios.post("http://localhost:3030/auth/generaladmin/creation", creationFields);
+            let creationRes = await axios.post("http://localhost:3030/auth/centreadmin/creation", creationFields);
+            let creationDetails = await creationRes.data;
+            return creationDetails;
+        } catch (e) {
+            console.error(e);
+        }
+
+    }
+    static addpromo = async (porcentage, durre, produit_id) => {
+        try {
+            let creationFields = {
+                porcentage: porcentage,
+                durre: durre,
+                produit_id: produit_id
+            }
+            let creationRes = await axios.post("http://localhost:3030/auth/centreadmin/creationpromotion", creationFields);
             let creationDetails = await creationRes.data;
             return creationDetails;
         } catch (e) {
