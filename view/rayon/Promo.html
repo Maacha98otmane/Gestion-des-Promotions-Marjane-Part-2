@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="">
+    <title>Home A-G</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../node_modules/axios/dist/axios.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <!-- Container wrapper -->
+        <div class="container">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#"><img src="../../assets/img/logo.png" class="rounded-circle" height="48"
+                    alt="" loading="lazy" /></a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left links -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex flex-column text-center" aria-current="page" href="./.html"><i
+                                class="fas fa-briefcase fa-lg"></i><span class="small">Promo</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../../assets/img/avatar.png" class="rounded-circle" height="30" alt=""
+                                loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" id="logout" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Left links -->
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <div class="container" style="margin-top: 8%;">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="row justify-content-between">
+                    <div class="col-6">
+                        <h4>List Promo</h4>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Confirm Promo
+                        </button>
+                    </div>
+                </div>
+                <!-- Modal User -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form id="formlg" class="needs-validation" novalidate="" autocomplete="off">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Confirm Promo</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="mb-2 text-muted" for="name">Produit</label>
+                                        <div class="mb-3">
+                                            <select name="id" id="id" class="form-select"
+                                                aria-label="Default select example">
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="mb-2 text-muted" for="name">Status</label>
+                                        <div class="mb-3">
+                                            <select id="Status" name="Status" class="form-select"
+                                                aria-label="Default select example">
+                                                <option value="valide">valide</option>
+                                                <option value="invalide">invalide</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="mb-2 text-muted" for="Comment">Comment</label>
+                                        <input id="Comment" type="text" class="form-control" name="Comment" value=""
+                                            required autofocus>
+                                        <div class="invalid-feedback">
+                                            Comment is required
+                                        </div>
+                                    </div>
+
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Add</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- END MODAL USER -->
+
+                <div class="table-responsive">
+                    <table id="mytable" class="table table-bordred table-striped">
+                        <thead>
+                            <th>Id</th>
+                            <th>Produit</th>
+                            <th>Prix</th>
+                            <th>Quantite</th>
+                            <th>Porcentage</th>
+                            <th>Point Fidelite</th>
+                            <th>Status</th>
+                        </thead>
+                        <tbody id="tablebody">
+
+                        </tbody>
+
+                    </table>
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script type="module" src="../../assets/js/RR/home.js"></script>
+
+</body>
+
+</html>

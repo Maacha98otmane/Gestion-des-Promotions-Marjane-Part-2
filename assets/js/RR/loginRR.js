@@ -20,16 +20,16 @@
 })()
 
 //
-import AdminG from "../classes/AdminGeneral.js";
+import RR from "../classes/Rayon.js";
 const formlg = document.getElementById('formlg')
 window.addEventListener('DOMContentLoaded', () => {
 	formlg.addEventListener('submit', async (e) => {
 		e.preventDefault();
-		let login = await AdminG.login(formlg.email.value, formlg.password.value)
+		let login = await RR.loginRR(formlg.email.value, formlg.password.value)
 		console.log(login)
 		if (login.status == true) {
-			document.cookie = "AdminG=" + login.token,
-			location.replace('/view/admin-general/home-AG.html')
+			document.cookie = "RR=" + login.token,
+				location.replace('/view/rayon/Promo.html')
 		} else {
 			console.log("Email or password are incorrect")
 		}
